@@ -1,20 +1,44 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Google Challenge - 01/15/2019 by r.kinra.
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+  <pre>
+   <b>Instructions:</b>
+   Things to be shared in advance with the candidate
+   ·  Task will be performed on https://stackblitz.com/ (to have a nice coding environment)
+   ·  Will be a angular2 app using typescript
+   ·  Will use @angular/material (https://material.angular.io/)
 
+   The task can be then done via VC or off-line to be provided next day (some candidates may need to get up to speed with angular2/typescript/material ... even if candidate is not familiar, if they can get up to speed in a reasonable time that is ok for us).
+
+   The task itself: on https://stackblitz.com/, please create an angular2 app that does the following:
+   ·  Uses @angular/material to display a numeric input field and 3 buttons
+   ·  two of the buttons will allow increasing/decreasing the value in the input field (+1 and -1)
+   ·  The third button will toggle on/off mouse tracking, so that the input field displays the mouse x position in the browser window while the mouse is moving. The +1/-1 buttons should be disabled when mouse tracking is active and enabled when it is not.
+
+   Important notes:
+   ·  Make sure the app is styled in material design (we are interested in the ability to correctly use angular material directives and startup code)
+   ·  The "track mouse" button should continuously track the mouse until it is clicked again. We are interested in event handling start and stop as part of user interaction.
+ </pre>
+
+    <form>
+     <div example-button-row>
+      <button mat-mini-fab [disabled]="disableButtons" type="button" color="primary" (click)="decrement($event)">-1</button>
+
+      <mat-form-field class="example-full-width" style="margin: 0px 12px 0px 12px">
+        <input matInput type="number" maxlength="7" [value]="myValue">
+      </mat-form-field>
+
+      <button mat-mini-fab [disabled]="disableButtons" type="button" color="primary" (click)="increment($event)">+1</button>
+
+     </div>
+
+     <div example-button-row>
+       <button mat-stroked-button type="button" color="primary" (click)="toggleTrackMouseMove($event)">Track Mouse Move</button>
+     </div>
+
+
+    </form>
+
+<div>

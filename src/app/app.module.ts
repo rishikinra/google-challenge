@@ -1,5 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+
+import {
+  MatButtonModule,
+  MatInputModule,
+  MatButtonToggleModule,
+  MatFormFieldModule
+} from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 
@@ -8,7 +17,20 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatFormFieldModule
+  ],
+  exports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

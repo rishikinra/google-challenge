@@ -36,7 +36,12 @@ export class AppComponent {
     //this.listenerFn = undefined; // @NOTE: without doing this, the Fn still sticks around.
 
     // RxJS approach.
-    this.subscription.unsubscribe();
+    try { // adding this for unit test.. since it was ..
+      this.subscription.unsubscribe();
+    } catch(ex) {
+
+    }
+
     this.subscription = undefined; // @NOTE: without doing this, the Fn still sticks around.
 
     this.disableButtons = false;
